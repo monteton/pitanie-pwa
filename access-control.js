@@ -1,7 +1,7 @@
-// Доступ к приложению — 60 дней с первого входа на этом устройстве.
+// Доступ к приложению — 90 дней с первого входа на этом устройстве.
 (function () {
   var KEY = 'pitanie-first-access';
-  var MAX_DAYS = 60;
+  var MAX_DAYS = 90;
   var now = Date.now();
   var first = null;
   try { first = localStorage.getItem(KEY); } catch (e) {}
@@ -22,7 +22,7 @@
     var cur = parseInt(localStorage.getItem(KEY) || '0', 10);
     if (old && (!cur || old < cur)) {
       localStorage.setItem(KEY, String(old));
-      if ((Date.now() - old) / 86400000 > 60 && !/expired\.html$/.test(location.pathname)) location.replace('expired.html');
+      if ((Date.now() - old) / 86400000 > 90 && !/expired\.html$/.test(location.pathname)) location.replace('expired.html');
     }
   } catch (e) {}
 })();
